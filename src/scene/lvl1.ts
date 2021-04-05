@@ -1,10 +1,15 @@
 import Phaser from 'phaser';
+
+import Student from '../characters/Student';
+
 export default class Lvl1 extends Phaser.Scene {
   text: Phaser.GameObjects.Text;
   mainTimer: Phaser.Time.TimerEvent;
   heatGaugeBg: Phaser.GameObjects.Graphics;
   heatGaugeBgLightBorder: Phaser.GameObjects.Graphics;
   books: Phaser.GameObjects.Sprite;
+  boy1: Student;
+  boy2: Student;
 
   constructor() {
     super('lvl1');
@@ -80,8 +85,13 @@ export default class Lvl1 extends Phaser.Scene {
     // console.log(animationFrames);
 
     // charactors
-    this.add.image(150, 200, 'boy1').setScale(0.6, 0.6);
-    this.add.image(400, 200, 'boy2').setScale(0.6, 0.6);
+    this.boy1 = new Student(this, 150, 200, 'boy1');
+    this.boy2 = new Student(this, 400, 200, 'boy2');
+    // this.girl1 = new Student(this, 150, 200, 'boy1');
+    // this.boy4 = new Student(this, 150, 200, 'boy1');
+
+    // this.add.image(150, 200, 'boy1').setScale(0.6, 0.6);
+    // this.add.image(400, 200, 'boy2').setScale(0.6, 0.6);
     this.add.image(650, 200, 'girl1').setScale(0.6, 0.6);
     this.add.image(150, 413, 'girl2').setScale(0.6, 0.6);
     this.add.image(400, 413, 'girl3').setScale(0.6, 0.6);
